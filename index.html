@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JR Medicare</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav>
+            <h1>JR Medicare</h1>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#products">Our Products</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section with Parallax Effect -->
+    <section id="home" class="section hero">
+        <div class="overlay">
+            <h2>Welcome to JR Medicare</h2>
+            <p>Your trusted partner in hospital consumables since 2006.</p>
+            <a href="#products" class="btn-primary">Explore Products</a>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="section fade-in">
+        <h2>About Us</h2>
+        <p>Delivering quality healthcare consumables with dedication and service excellence since 2006.</p>
+    </section>
+
+    <!-- Products Section with Filter and Hover Effects -->
+    <section id="products" class="section fade-in">
+        <h2>Our Products</h2>
+        <div class="product-grid">
+            <div class="product-item">
+                <img src="ecg_paper.jpg" alt="ECG Graph Papers">
+                <p>ECG Graph Papers</p>
+            </div>
+            <div class="product-item">
+                <img src="ctg_paper.jpg" alt="CTG Papers">
+                <p>CTG Papers</p>
+            </div>
+            <div class="product-item">
+                <img src="tmt_paper.jpg" alt="TMT Papers">
+                <p>TMT Papers</p>
+            </div>
+            <div class="product-item">
+                <img src="sony_ultrasound.jpg" alt="Ultra Sound Scanning Papers">
+                <p>Ultra Sound Scanning Papers (Sony brand)</p>
+            </div>
+            <div class="product-item">
+                <img src="ultrasound_gel.jpg" alt="Ultra Sound Scanning GEL">
+                <p>Ultra Sound Scanning GEL</p>
+            </div>
+            <div class="product-item">
+                <img src="cardio_gel.jpg" alt="Electro Cardio Scanning GEL">
+                <p>Electro Cardio Scanning GEL</p>
+            </div>
+            <div class="product-item">
+                <img src="ecg_accessory.jpg" alt="Machine Accessories ECG">
+                <p>Machine Accessories ECG</p>
+            </div>
+            <div class="product-item">
+                <img src="ecg_electrode.jpg" alt="ECG Electrode">
+                <p>ECG Electrode</p>
+            </div>
+            <div class="product-item">
+                <img src="metal_electrode.jpg" alt="Metal Electrode">
+                <p>Metal Electrode</p>
+            </div>
+            <div class="product-item">
+                <img src="clamp_electrode.jpg" alt="Clamp Electrode">
+                <p>Clamp Electrode</p>
+            </div>
+            <div class="product-item">
+                <img src="eeg_paste.jpg" alt="EEG Paste">
+                <p>EEG Paste</p>
+            </div>
+            <div class="product-item">
+                <img src="a4_paper.jpg" alt="A4 Papers">
+                <p>A4 Papers</p>
+            </div>
+
+            <!-- temp products - to be added -->
+            <div class="product-item">
+                <img src="a4_paper.jpg" alt="temp product">
+                <p>temp product</p>
+            </div>
+            <div class="product-item">
+                <img src="a4_paper.jpg" alt="temp product">
+                <p>temp product</p>
+            </div>
+            <div class="product-item">
+                <img src="a4_paper.jpg" alt="temp product">
+                <p>temp product</p>
+            </div>
+        </div>
+    </section>
+    
+
+    
+
+    <section id="contact" class="section fade-in">
+        <h2>Contact Us</h2>
+        <form action="#" id="contactForm" novalidate>
+            <div class="form-group">
+                <input type="text" id="name" required >
+                <label for="name">Your Name</label>
+                
+            </div>
+            <div class="form-group">
+                <input type="email" id="email" required>
+                <label for="email">Your Email</label>
+                
+            </div>
+            <div class="form-group">
+                <textarea id="message" required></textarea>
+                <label for="message">Your Message</label>
+                
+            </div>
+            <button type="submit" class="submit-btn">Send Message</button>
+            <div id="formMessage"></div>
+        </form>
+        <p>Email: info@jrmedicare.com | Phone: +91-XXXXXXXXXX</p>
+    </section>
+    
+
+    <!-- Back to Top Button -->
+    <button onclick="topFunction()" id="topBtn" title="Go to top">Top</button>
+
+
+    <!-- Floating WhatsApp Button -->
+    <div id="whatsappButton">
+        <a href="https://wa.me/919188727244" target="_blank" title="Chat with us on WhatsApp">
+            <img src="./images/whatsapp-logo.jpeg" alt="WhatsApp" />
+        </a>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 JR Medicare. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

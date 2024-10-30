@@ -1,0 +1,350 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+/* Navbar */
+header {
+    background: #0056b3;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+header nav ul li {
+    margin: 0 1.5rem;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #ffdd57;
+}
+
+
+
+
+
+/* Hero Section */
+.hero {
+    background: url('hero.jpg') center/cover no-repeat fixed;
+    color: #fff;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.hero .overlay {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 2.5rem;
+    text-align: center;
+    border-radius: 10px;
+    max-width: 500px;
+    animation: fadeIn 1.5s ease;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.btn-primary {
+    padding: 0.75rem 1.5rem;
+    background: #ffdd57;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #ffbf00;
+}
+
+/* Sections */
+.section {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1.2s ease forwards;
+    animation-delay: 0.5s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Filter Buttons for Product Section */
+.filter-buttons {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.filter-buttons button {
+    background-color: #0056b3;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    margin: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.filter-buttons button:hover {
+    background-color: #003f8a;
+}
+
+/* General Section Styling */
+.section {
+    padding: 4rem 2rem;
+    text-align: center;
+    background-color: #f8f9fa;
+}
+
+/* Product Grid Styling */
+.product-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    margin-top: 2rem;
+}
+
+.product-item {
+    padding: 1rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.product-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 0.75rem;
+}
+
+.product-item p {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+}
+
+
+/* Contact Form */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+}
+
+form input:focus, form textarea:focus {
+    border-color: #0056b3;
+    box-shadow: 0 4px 8px rgba(0, 86, 179, 0.2);
+}
+
+label {
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    color: #777;
+    font-size: 1rem;
+    pointer-events: none;
+    transition: all 0.2s;
+}
+
+input:focus + label, input:not(:placeholder-shown) + label,
+textarea:focus + label, textarea:not(:placeholder-shown) + label {
+    top: -0.75rem;
+    left: 0.9rem;
+    font-size: 0.85rem;
+    color: #0056b3;
+    background: #fff;
+    padding: 0 0.3rem;
+}
+
+.tooltip {
+    display: none;
+    position: absolute;
+    top: 3.5rem;
+    left: 1rem;
+    font-size: 0.85rem;
+    color: #555;
+}
+
+.form-group:hover .tooltip {
+    display: block;
+}
+
+.submit-btn {
+    display: inline-block;
+    width: 100%;
+    padding: 1rem;
+    background-color: #0056b3;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.submit-btn:hover {
+    background-color: #003f8a;
+    transform: scale(1.02);
+}
+
+#formMessage {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: #28a745;
+    display: none;
+}
+
+/* Error Message */
+.form-error {
+    border-color: #e74c3c !important;
+    box-shadow: 0 4px 8px rgba(231, 76, 60, 0.2);
+}
+
+.form-error + label {
+    color: #e74c3c;
+}
+
+#formMessage.error {
+    color: #e74c3c;
+}
+
+
+/* Back to Top Button */
+#topBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#topBtn:hover {
+    background-color: #003f8a;
+}
+
+
+#whatsappButton {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 60px;
+    height: 60px;
+    z-index: 1000;
+}
+
+#whatsappButton img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+#whatsappButton img:hover {
+    transform: scale(1.1);
+}
+
+
+
+
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
