@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     color: #333;
@@ -44,15 +48,33 @@ header nav ul li a:hover {
     color: #ffdd57;
 }
 
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
+.navbar .comp-name{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .comp-name img{
+    border-radius: 50%;
+    width: 80px;
+    margin-right: 1rem;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.8); /* Adjusted to a blue glow */
+}
 
 
 
 /* Hero Section */
 .hero {
-    background: url('hero.jpg') center/cover no-repeat fixed;
+    background: url('./images/wallpaper4.jpg') center/cover no-repeat fixed;
+    background-size: cover; /* Ensure the image covers the entire section */
     color: #fff;
-    height: 80vh;
+    height: 82vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -66,7 +88,20 @@ header nav ul li a:hover {
     border-radius: 10px;
     max-width: 500px;
     animation: fadeIn 1.5s ease;
+    box-shadow: 0 0 20px rgba(0, 121, 252, 0.8); /* Adding a blue box shadow */
 }
+
+/* .hero .overlay {
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.6), 
+        rgba(0, 0, 135, 0.4)
+    );
+    padding: 2.5rem;
+    text-align: center;
+    border-radius: 10px;
+    max-width: 500px;
+    animation: fadeIn 1.5s ease;
+} */
 
 .hero h2 {
     font-size: 2.5rem;
@@ -93,10 +128,65 @@ header nav ul li a:hover {
     background-color: #ffbf00;
 }
 
+.company-name {
+    color: #1e90ff; 
+}
+
+/* About section css */
+
+#about {
+    background-color: #f9f9f9;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 2rem auto;
+    text-align: center;
+}
+
+#about h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #003f8a;
+}
+
+#about .about-content {
+    margin-bottom: 1.5rem;
+}
+
+#about .about-content p {
+    margin-bottom: 1rem;
+    color: #333;
+    line-height: 1.6;
+}
+
+#about .about-image {
+    text-align: center;
+}
+
+#about .about-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+
+
+
+
+
+
+
+
 /* Sections */
 .section {
     padding: 4rem 2rem;
     text-align: center;
+    margin-bottom: 2rem;
 }
 
 .fade-in {
@@ -153,6 +243,10 @@ header nav ul li a:hover {
     margin-top: 2rem;
 }
 
+#products h2{
+    color: #003f8a;
+}
+
 .product-item {
     padding: 1rem;
     border: 1px solid #e0e0e0;
@@ -183,6 +277,8 @@ header nav ul li a:hover {
 
 
 /* Contact Form */
+
+
 form {
     max-width: 600px;
     margin: 0 auto;
@@ -206,7 +302,8 @@ form input, form textarea {
 }
 
 form input:focus, form textarea:focus {
-    border-color: #0056b3;
+    /* border-color: #0056b3; */
+    border-color: #003f8a;
     box-shadow: 0 4px 8px rgba(0, 86, 179, 0.2);
 }
 
@@ -225,7 +322,8 @@ textarea:focus + label, textarea:not(:placeholder-shown) + label {
     top: -0.75rem;
     left: 0.9rem;
     font-size: 0.85rem;
-    color: #0056b3;
+    /* color: #0056b3; */
+    color: #003f8a;
     background: #fff;
     padding: 0 0.3rem;
 }
@@ -247,7 +345,8 @@ textarea:focus + label, textarea:not(:placeholder-shown) + label {
     display: inline-block;
     width: 100%;
     padding: 1rem;
-    background-color: #0056b3;
+    /* background-color: #0056b3; */
+    background-color: #003f8a;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -258,7 +357,8 @@ textarea:focus + label, textarea:not(:placeholder-shown) + label {
 }
 
 .submit-btn:hover {
-    background-color: #003f8a;
+    /* background-color: #003f8a; */
+    background-color: #0056b3;
     transform: scale(1.02);
 }
 
@@ -268,6 +368,128 @@ textarea:focus + label, textarea:not(:placeholder-shown) + label {
     color: #28a745;
     display: none;
 }
+
+
+
+
+/* new contact form css */
+
+#contact {
+    background-color: #f9f9f9;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin: 2rem auto;
+}
+
+#contact h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #003f8a;
+    text-align: center;
+}
+
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+#contactForm {
+    flex: 1;
+    min-width: 300px;
+}
+
+#contact .form-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+#contact .form-group input,
+#contact .form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+#contact .form-group input:focus,
+#contact .form-group textarea:focus {
+    border-color: #003f8a;
+}
+
+#contact .form-group label {
+    position: absolute;
+    top: -1rem;
+    left: 1rem;
+    background-color: #f9f9f9;
+    padding: 0 0.25rem;
+    color: #003f8a;
+    font-size: 0.875rem;
+    transition: all 0.3s;
+}
+
+#contact .submit-btn {
+    background-color: #003f8a;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#contact .submit-btn:hover {
+    background-color: #0056b3;
+}
+
+#contact p {
+    margin-top: 1.5rem;
+    color: #333;
+    text-align: center;
+}
+
+.map-container {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 450px;
+    border: 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1.5rem;
+    color: #333;
+    text-align: center;
+}
+
+.contact-info p {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.contact-info i {
+    font-size: 1.5rem;
+    color: #003f8a;
+}
+
+
+
+
+
 
 /* Error Message */
 .form-error {
