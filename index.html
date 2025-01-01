@@ -7,15 +7,17 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 </head>
 <body>
+
     <!-- Navbar -->
     <header>
         <nav>
             <div class="navbar">
                 <div class="comp-name">
                     <img src="./images/logo.jpg" alt="logo">
-                    <h1>JR Medicare</h1>
+                    <h1 class="comp-logo-name">JR Medicare</h1>
             </div>
             <div class="menu">
                 <ul>
@@ -39,18 +41,12 @@
         </div>
     </section>
 
-    <!-- About Us Section
-    <section id="about" class="section fade-in">
-        <h2>About Us</h2>
-        <p>Delivering quality healthcare consumables with dedication and service excellence since 2006.</p>
-        <p>At JR Medicare, we are committed to providing the best products and services to our clients. Our team of experts ensures that every product meets the highest standards of quality and reliability.</p>
-        <p>We believe in building long-term relationships with our clients by offering exceptional customer service and support.</p>
-    </section> -->
 
 
 
     <!-- About Us Section -->
-<section id="about" class="section fade-in">
+
+<!-- <section id="about" class="section fade-in">
     <h2>About Us</h2>
     <div class="about-content">
         <p>Delivering quality healthcare consumables with dedication and service excellence since 2006.</p>
@@ -59,6 +55,22 @@
     </div>
     <div class="about-image">
         <img src="./images/about-us.jpg" alt="About Us">
+    </div>
+</section> -->
+
+
+
+<section id="about" class="section fade-in">
+    <h2>About Us</h2>
+    <div class="about-container">
+        <div class="about-content">
+            <p class="highlight">Delivering quality healthcare consumables with dedication and service excellence since 2006.</p>
+            <p>At JR Medicare, we are committed to providing the best products and services to our clients. Our team of experts ensures that every product meets the highest standards of quality and reliability.</p>
+            <p>We believe in building long-term relationships with our clients by offering exceptional customer service and support.</p>
+        </div>
+        <div class="about-image">
+            <img src="./images/JR-Banner.jpg" alt="About Us">
+        </div>
     </div>
 </section>
 
@@ -117,20 +129,21 @@
                 <img src="./images/a4-2.jpg"  alt="A4 Papers">
                 <p>A4 Papers</p>
             </div>
+            <div class="product-item">
+                <img src="./images/ECG-papers.jpg" alt="ECG Paper companies" style="height: 200px;">
+                <p>ECG Roll</p>
+            </div>
 
-            <!-- temp products - to be added -->
-            <div class="product-item">
+            <!-- additional products - to be added -->
+
+            <!-- <div class="product-item">
                 <img src="a4_paper.jpg" alt="temp product">
                 <p>temp product</p>
             </div>
             <div class="product-item">
                 <img src="a4_paper.jpg" alt="temp product">
                 <p>temp product</p>
-            </div>
-            <div class="product-item">
-                <img src="a4_paper.jpg" alt="temp product">
-                <p>temp product</p>
-            </div>
+            </div> -->
         </div>
     </section>
     
@@ -142,15 +155,19 @@
         <div class="contact-container">
             <form action="#" id="contactForm" novalidate>
                 <div class="form-group">
-                    <input type="text" id="name" required>
+                    <input type="text" id="name" name="name" required>
                     <label for="name">Your Name</label>
                 </div>
                 <div class="form-group">
-                    <input type="email" id="email" required>
+                    <input type="email" id="email" name="email" required>
                     <label for="email">Your Email</label>
                 </div>
                 <div class="form-group">
-                    <textarea id="message" required></textarea>
+                    <input type="tel" id="phone" name="phone" required>
+                    <label for="phone">Your Phone Number</label>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" name="message" required></textarea>
                     <label for="message">Your Message</label>
                 </div>
                 <button type="submit" class="submit-btn">Send Message</button>
@@ -168,7 +185,9 @@
     
 
     <!-- Back to Top Button -->
-    <button onclick="topFunction()" id="topBtn" title="Go to top">Top</button>
+<button onclick="topFunction()" id="topBtn" title="Go to top">
+    <i class="fas fa-arrow-up"></i> <strong>Top</strong>
+</button>
 
 
     <!-- Floating WhatsApp Button -->

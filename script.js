@@ -30,6 +30,10 @@ function topFunction() {
   document.documentElement.scrollTop = 0;
 }
 
+(function () {
+  emailjs.init("XZJNWIHdFIHBI5BQP"); // Replace with your EmailJS user ID
+})();
+
 document
   .getElementById("contactForm")
   .addEventListener("submit", function (event) {
@@ -38,6 +42,7 @@ document
     let isValid = true;
     const nameField = document.getElementById("name");
     const emailField = document.getElementById("email");
+    const phoneField = document.getElementById("phone");
     const messageField = document.getElementById("message");
     const formMessage = document.getElementById("formMessage");
 
@@ -56,6 +61,13 @@ document
       emailField.classList.remove("form-error");
     }
 
+    if (phoneField.value.trim() === "") {
+      phoneField.classList.add("form-error");
+      isValid = false;
+    } else {
+      phoneField.classList.remove("form-error");
+    }
+
     if (messageField.value.trim() === "") {
       messageField.classList.add("form-error");
       isValid = false;
@@ -65,20 +77,31 @@ document
 
     // Show success or error message
     if (isValid) {
-      formMessage.textContent =
-        "Thank you for your message! We’ll get back to you soon.";
-      formMessage.classList.remove("error");
-      formMessage.style.display = "block";
-      formMessage.style.color = "#28a745";
+      emailjs.sendForm("service_bkefxz6", "template_4qhn06g", this).then(
+        function () {
+          formMessage.textContent =
+            "Thank you for your message! We’ll get back to you soon.";
+          formMessage.classList.remove("error");
+          formMessage.style.display = "block";
+          formMessage.style.color = "#28a745";
 
-      // Reset form fields after a delay
-      setTimeout(() => {
-        document.getElementById("contactForm").reset();
-        formMessage.style.display = "none";
-      }, 3000);
+          // Reset form fields after a delay
+          setTimeout(() => {
+            document.getElementById("contactForm").reset();
+            formMessage.style.display = "none";
+          }, 3000);
+        },
+        function (error) {
+          formMessage.textContent = "Failed to send message. Please try again.";
+          formMessage.classList.add("error");
+          formMessage.style.display = "block";
+          formMessage.style.color = "red";
+        }
+      );
     } else {
       formMessage.textContent = "Please fill out all fields correctly.";
       formMessage.classList.add("error");
       formMessage.style.display = "block";
+      formMessage.style.color = "red";
     }
   });

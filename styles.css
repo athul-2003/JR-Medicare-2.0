@@ -67,7 +67,9 @@ header nav ul li a:hover {
     box-shadow: 0 0 10px rgba(0, 123, 255, 0.8); /* Adjusted to a blue glow */
 }
 
-
+.comp-logo-name{
+    font-size: 2rem;
+}
 
 /* Hero Section */
 .hero {
@@ -132,44 +134,65 @@ header nav ul li a:hover {
     color: #1e90ff; 
 }
 
-/* About section css */
-
+/* About Us Section */
 #about {
     background-color: #f9f9f9;
-    padding: 2rem;
+    padding: 4rem 2rem;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 800px;
+    max-width: 1200px;
     margin: 2rem auto;
     text-align: center;
 }
 
 #about h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
     color: #003f8a;
 }
 
-#about .about-content {
-    margin-bottom: 1.5rem;
+.about-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
 }
 
-#about .about-content p {
-    margin-bottom: 1rem;
+.about-content {
+    flex: 1;
+    min-width: 300px;
+    max-width: 600px;
+    text-align: left;
+}
+
+.about-content p {
+    margin-bottom: 1.5rem;
     color: #333;
     line-height: 1.6;
+    font-size: 1.1rem;
 }
 
-#about .about-image {
+.about-content .highlight {
+    font-weight: bold;
+    /* color: #007bff; */
+    color: #4169e1;
+    font-size: 1.2rem;
+}
+
+.about-image {
+    flex: 1;
+    min-width: 300px;
+    max-width: 600px;
     text-align: center;
 }
 
-#about .about-image img {
+.about-image img {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+}             
 
 
 
@@ -244,6 +267,7 @@ header nav ul li a:hover {
 }
 
 #products h2{
+    font-size: 2.5rem;
     color: #003f8a;
 }
 
@@ -384,7 +408,7 @@ textarea:focus + label, textarea:not(:placeholder-shown) + label {
 }
 
 #contact h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-bottom: 1rem;
     color: #003f8a;
     text-align: center;
@@ -515,10 +539,15 @@ textarea:focus + label, textarea:not(:placeholder-shown) + label {
     background-color: #0056b3;
     color: white;
     border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
+    /* padding: 0.5rem 1rem;
+    border-radius: 5px; */
+    padding: 15px;
+    border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 #topBtn:hover {
